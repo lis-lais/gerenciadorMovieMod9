@@ -3,7 +3,7 @@ const Movie = require('../models/movie');
 const createMovie = async (movieData) => await Movie.create(movieData);
 const findAllMovies = async () => await Movie.find ();
 const findMovieById = async (id) => await Movie.findById (id);
-const updateMovie = async (id, movieData) => await Movie.findByIdAndUpdate (id, movieData, { new: true });
+const updateMovie = async (id, data) => await Movie.findByIdAndUpdate (id, data, { new: true });
 const deleteMovie = async (id) => await Movie.findByIdAndDelete (id);
 const searchMovies = async (filters) => await Movie.find(filters);
 
