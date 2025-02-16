@@ -12,6 +12,10 @@ const findAllMovies = async () => {
 }; 
 
 const updateMovie = async (id, data) => {
+    if (Object.keys(data).length === 0) {
+        throw new Error("Pelo menos um campo deve ser atualizado.");
+    }
+    
     const updatedMovie = await movieRepository.updateMovie(id, data);
     if (!updatedMovie) {
         throw new Error(`Filme com ID ${id} não encontrado.`);
